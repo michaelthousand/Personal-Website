@@ -1,0 +1,428 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+
+html{
+    font-size: 16px;
+}
+
+nav{
+    text-align: center;
+    background-color: #0000009f;
+}
+
+nav a{
+    font-family: quicksand, sans-serif;
+    color: #fff;
+    font-size: 2.5rem;
+    line-height: 4rem;
+    display: inline;
+    padding: 0px 50px;
+    margin: auto;
+    text-decoration: none;
+}
+
+body{
+    background-image: linear-gradient(#000, #000000b6);
+}
+
+footer{
+    text-align: center;
+    background-color: #0000009f;
+    line-height: 4rem;
+    margin-bottom: 0px;
+    margin-top: 750px;
+    color: #fff;
+    font-family: montserrat, sans-serif;
+    font-size: 1.5rem;
+    /*
+    opacity: 0;
+    animation: fadeIn 2s ease-in 400ms forwards;
+    */
+}
+
+/* Home Page */
+#title{
+  text-align: center;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: 100px;
+  color: #fff;
+  background-color: #000000b7;
+  height:fit-content;
+  width: fit-content;
+  text-shadow:
+      0.07em 0 black,
+      0 0.07em black,
+      -0.07em 0 black,
+      0 -0.07em black;
+  border-radius: 15px;
+}
+
+#title h1{
+  font-family: raleway, sans-serif;
+  font-size: 6rem;
+  padding: 30px 50px 0px 50px;
+}
+
+#title h2{
+  font-family: montserrat, sans-serif;
+  font-size: 3.5rem;
+  padding-bottom: 30px;
+  font-style: italic;
+}
+
+.resumebutton {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    overflow: hidden;
+    margin-top: 75px;
+    margin-left: auto;
+    margin-right: 340px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+    width: 400px;
+    height: 100px;
+    line-height: 100px;
+    background-color: #f9fcfbec;
+    color: #AD9600;
+    font-family: quicksand, sans-serif;
+    font-weight: bold;
+  }
+
+  .resumebutton span,
+  .resumebutton div,
+  .resumebutton i {
+    transition: width 750ms ease-in 200ms, left 500ms ease-out 450ms, font-size 950ms ease;
+  }
+  
+  .resumebutton span,
+  .resumebutton .icon {
+    position: absolute;
+    display: block;
+    height: 100%;
+    text-align: center;
+   }
+
+  
+  .resumebutton span {
+    width: 72%;
+    left: 0px;
+    line-height: inherit;
+    font-size: 25px;
+  }
+  
+  .resumebutton .icon {
+    right: 0;
+    width: 28%;
+  }
+  
+  .resumebutton .icon .fa {
+    font-size: 30px;
+    vertical-align: middle;
+  }
+  
+  .icon {
+    width: 200px;
+    background-color: #aaacabb2;
+  }
+  
+  .resumebutton:hover span {
+    left: -72%;
+  }
+  
+  .resumebutton:hover .icon {
+    width: 100%;
+  }
+  
+  .resumebutton:hover .icon .fa {
+    font-size: 45px;
+  }
+
+
+/* About Me Page */
+#topSection{
+  border: 3px solid #fff;
+  margin: 25px;
+  padding: 25px;
+  display: inline-flex;
+}
+
+#topSection img{
+  max-height: 1014px;
+  max-width: 1014px;
+  height: auto;
+  width: auto;
+}
+
+#topSection p{
+  color:#fff;
+  font-family: montserrat, sans-serif;
+  font-size: 3rem;
+  line-height: 4rem;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.aboutContainer h1{
+  font-family: quicksand, sans-serif;
+  font-size: 5rem;
+  line-height: 7rem;
+  text-align: center;
+  color: #fff;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  text-shadow: 5px 5px #000;
+  background-color: #0000009f;
+  background-size: contain;
+}
+
+.skills-table{
+  display: grid;
+  width: 82.5%;
+  position: relative;
+  margin: auto;
+  gap: 30px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  text-align:center;
+}
+
+.skill{
+  font-family: montserrat, sans-serif;
+  font-size: 2.5rem;
+  color:#fff;
+  background-color: rgba(0, 0, 0, 0.295);
+  border: 3.5px solid #fff;
+  border-radius: 10px;
+  box-shadow: 3px 3px rgba(255, 255, 255, 0.473);
+}
+
+.skillname{
+  color:#E0C100;
+}
+
+.resume-table{
+  display: grid;
+  width: 82.5%;
+  position: relative;
+  margin: auto;
+  margin-top: 50px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  text-align: center;
+  gap: 30px;
+}
+
+#resume-line {
+  color:#fff;
+  font-size: 2rem;
+  font-family: montserrat, sans-serif;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  text-align: center;
+}
+
+#resume-line a{
+  color:#E0C100;
+}
+
+.job{
+  border: 2px solid #000;
+  box-shadow: 3px 3px rgba(255, 255, 255, 0.473);
+  padding: 25px;
+  background-color: rgba(0, 0, 0, 0.295);
+  border: 3.5px solid #fff;
+  border-radius: 10px;
+}
+
+.job h3{
+  font-family: quicksand, sans-serif;
+  font-size: 2.5rem;
+  color:#fff;
+  text-decoration: underline;
+}
+
+.job p{
+  font-family: montserrat, sans-serif;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.date{
+  font-style: italic;
+  opacity: 80%;
+  text-decoration: none;
+}
+
+.edu-table{
+  display: grid;
+  width: 82.5%;
+  position: relative;
+  margin: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  text-align: center;
+  gap: 30px;
+  padding-top: 50px;
+}
+
+.school{
+  border: 2px solid #000;
+  box-shadow: 3px 3px rgba(255, 255, 255, 0.473);
+  padding: 25px;
+  background-color: rgba(0, 0, 0, 0.295);
+  border: 3.5px solid #fff;
+  border-radius: 10px;
+}
+
+.school h3{
+  font-family: quicksand, sans-serif;
+  font-size: 2.5rem;
+  color: #fff;
+  text-decoration: underline;
+  text-shadow: 1.25px 1.25px #00000099;
+}
+
+.school p{
+  font-family: montserrat, sans-serif;
+  font-size: 1.5rem;
+  color:#fff;
+}
+
+.aboutresumebutton {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  overflow: hidden;
+  margin: auto;
+  border-radius: 5px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+  width: 400px;
+  height: 100px;
+  line-height: 100px;
+  background-color: #f9fcfbec;
+  color: #AD9600;
+  font-family: quicksand, sans-serif;
+  font-weight: bold;
+}
+
+.aboutresumebutton span,
+.aboutresumebutton div,
+.aboutresumebutton i {
+  transition: width 750ms ease-in 200ms, left 500ms ease-out 450ms, font-size 950ms ease;
+}
+
+.aboutresumebutton span,
+.aboutresumebutton .icon {
+   position: absolute;
+   display: block;
+  height: 100%;
+  text-align: center;
+ }
+
+
+.aboutresumebutton span {
+  width: 72%;
+  left: 0px;
+  line-height: inherit;
+  font-size: 25px;
+}
+
+.aboutresumebutton .icon {
+  right: 0;
+  width: 28%;
+}
+
+.aboutresumebutton .icon .fa {
+  font-size: 30px;
+  vertical-align: middle;
+}
+
+.icon {
+  width: 200px;
+  background-color: #aaacabb2;
+}
+
+.aboutresumebutton:hover span {
+  left: -72%;
+}
+
+.aboutresumebutton:hover .icon {
+  width: 100%;
+}
+
+.aboutresumebutton:hover .icon .fa {
+  font-size: 45px;
+}
+
+
+
+/* Projects Page*/
+#templink h2{
+  color:#fff;
+}
+
+#templink a{
+  color: #E0C100;
+}
+
+
+
+
+/* Contact Page */
+#profilepic{
+    display: flex;
+    justify-content: center;
+}
+
+#profilepic img{
+    height: 400px;
+    width: 400px;
+    border-radius: 250px;
+    margin-top: 30px;
+}
+
+.contacticons{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contacticons a{
+  font-size:5rem
+}
+
+.fa-github, .fa-linkedin-square, .fa-envelope{
+  color:#E0C100;
+  padding: 50px;
+}
+
+#contactMe h1{
+  color: #fff;
+  font-size: 4rem;
+}
+
+#contactMe p{
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+#contactMe{
+  text-align: center;
+  margin: 50px;
+  padding: 20px 50px 50px 50px;
+  border: 5px solid rgba(255, 255, 255, 0.521);
+  border-radius: 10px;
+}

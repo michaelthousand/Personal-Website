@@ -1,0 +1,33 @@
+{% extends 'mainsite/base.html' %}
+
+{%  load static %}
+
+
+{% block head %}
+<title>Michael Thousand - Contact</title>
+<link rel="stylesheet" href="{% static 'mainsite/style.css' %}">
+{% endblock %}
+
+
+
+{% block content %}
+<div id="profilepic">
+    <img src="{% static 'images/wedding_solo_3.jpg' %}" alt="Picture of Michael">
+</div>
+<div class="contacticons">
+    <a href="https://www.github.com/michaelthousand" target="_blank"><i class="fa fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/michael-thousand-89981911b/" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+    <a href="mailto:me@michaelthousand.com"><i class="fa fa-envelope"></i></a>
+</div>  
+<div id="contactMe">
+    <h1>Get in touch with me!</h1>
+    <p>If you would like to contact me about a potential job or just with general comments, please feel free to use the form below:</p>
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Submit</button>
+    </form>
+
+</div>
+
+{% endblock %}

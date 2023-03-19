@@ -1,0 +1,23 @@
+{% extends 'mainsite/base.html' %}
+
+{%  load static %}
+
+
+{% block head %}
+<title>Michael Thousand - Projects</title>
+<link rel="stylesheet" href="{% static 'mainsite/style.css' %}">
+{% endblock %}
+
+
+
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<div id="templink">
+    <h2>I'll be adding more to this page soon, but here is a link to a built-in workout tracker app: <a href="{% url 'workouthome' %}">Click Here</a></h2>
+</div>
+
+
+{% endblock %}

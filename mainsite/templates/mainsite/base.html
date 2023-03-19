@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+
+
+<head>
+    
+    {% block head %}
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Quicksand&family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    {% endblock %}
+
+
+</head>
+<body>
+    <nav>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'about' %}">About</a>
+        <a href="{% url 'projects' %}">Projects</a>
+        <a href="{% url 'contact' %}">Contact</a>
+    </nav>
+    
+
+    
+    {% block content %}
+    {% endblock %}
+    <footer>
+        <div>
+            <p>Created and designed by Michael Thousand - &copy; 2023. Photos by Manor Studios 1848.</p>
+        </div> 
+    </footer>
+</body>

@@ -1,0 +1,21 @@
+{% extends 'workouttracker/base.html' %} 
+
+{% load static %} 
+
+{% block head %}
+<title>1000 Workouts - New Workout</title>
+<link rel="stylesheet" href="{% static 'workouttracker/style.css' %}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+{% endblock %}
+
+{% block content %}
+<a href="{% url 'workoutlist' %}" class="wo_button">Go Back</a>
+<h2>Delete Workout</h2>
+<form method="post">
+    {% csrf_token %}
+  <p>Are you sure you want to permanently delete {{ object.date }} from the list of workouts?</p>
+  <p><em><strong>Note:</strong></em> this cannot be undone!</p>
+  <input class="wo_button" type="submit" value="Confirm" />
+</form>
+{% endblock %}

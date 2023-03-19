@@ -1,0 +1,49 @@
+<!--home page-->
+
+<!--Below is needed to extend the base layout-->
+{% extends 'mainsite/base.html' %}
+
+{%  load static %}
+
+<!--Below is for the header information that will be pushed into the base template-->
+{% block head %}
+<title>Michael Thousand - Home</title>
+<link rel="stylesheet" href="{% static 'mainsite/style.css' %}">
+<style>
+    body {
+        background-image: url('{% static "images/wedding_dad.jpg" %}');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size:cover;
+        height:1500px;
+        width:auto;
+    }
+</style>
+
+{% endblock %}
+
+
+<!--Below is for the content that will be pushed into the base template-->
+{% block content %}
+<div class="jumbotron">
+    <div class="container" id="title">
+        <h1>Michael Thousand</h1>
+        <h2 id="role">Computer Programmer</h2>
+        <!--
+        <h2 id="role"><span
+            class="txt-rotate"
+            data-period="2000"
+            data-rotate='[ "Python Programmer", "Game Developer", "Java Programmer", "Front-End Web Developer" ]'></span></h2> -->
+    </div>
+
+    <a class="resumebutton" id="resumebutton" style="color: #AD9600;" href="{% static 'files/Michael Thousand Resume.pdf'%}" role="button" target="_blank">
+        <span>DOWNLOAD RESUME</span>
+        <div class="icon">
+          <i class="fa fa-arrow-down"></i>
+        </div>
+    </a>
+</div> 
+
+<script src="/mainsite/static/mainsite/index.js"></script>
+
+{% endblock %}

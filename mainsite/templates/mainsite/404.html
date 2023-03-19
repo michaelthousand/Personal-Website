@@ -1,0 +1,26 @@
+{% extends 'workouttracker/base.html' %}
+
+{%  load static %}
+
+<!--Below is for the header information that will be pushed into the base template-->
+{% block head %}
+<title>Uh Oh!!</title>
+<link rel="stylesheet" href="{% static 'workouttracker/style.css' %}">
+{% endblock %}
+
+
+
+{% block content %}
+<nav>
+    <a href="{% url 'signup' %}" class="wo_button">Sign Up</a>
+    <a href="{% url 'login' %}" class="wo_button">Log In</a>
+</nav>
+
+<h1>Uh oh!</h1>
+<h3>It looks like the page you are looking for doesn't exist!</h3>
+<p>Enjoy this picture of Tuukka for your troubles.</p>
+<img id="aboutImage" src="{% static 'images/tuuks.jpg' %}" alt="Tuukka">
+
+
+
+{% endblock %}

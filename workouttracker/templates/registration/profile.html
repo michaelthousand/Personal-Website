@@ -1,0 +1,38 @@
+{% extends 'workouttracker/base.html' %}
+
+
+{% load static %}
+
+{% block head %}
+<title>1000 Workouts - Profile</title>
+<link rel="stylesheet" href="{% static 'workouttracker/style.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<nav>
+    <a href="{% url 'workoutlist' %}" class="wo_button">View Workouts</a>
+    <a href="{% url 'addworkout' %}" class="wo_button">New Workout</a>
+    <a href="{% url 'logout' %}" class="wo_button">Log Out</a>
+</nav>
+
+{% if user.first_name == '' %}
+<h2>Welcome {{ user }}!</h2>
+{% else %}
+<h2>Welcome {{ user.first_name }}!</h2>
+{% endif %}
+<p>Here are some quick stats to get you motivated!</p>
+
+{% if weight_loss < 0  %}
+<p>You've lost {{ weight_loss}} lbs! Keep it up!</p>
+{% elif weight_loss > 0 %}
+<p>You'gained {{weight_loss}} lbs.</p>
+{% else %}
+<p> No change in weight. Keep working at it!</p>
+{% endif %}
+
+<p>Workouts this month: {{ num_for_month }}</p>
+<p>Calories burned this month: {{ cals_for_month }}</p>
+<p>Overall average workout duration: {{avg_dur}} minutes per workout</p>
+
+{% endblock %}

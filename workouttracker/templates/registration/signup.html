@@ -1,0 +1,24 @@
+{% extends 'workouttracker/base.html' %}
+
+{% load static %}
+
+{% block head %}
+<title>1000 Workouts - Sign Up</title>
+<link rel="stylesheet" href="{% static 'workouttracker/style.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'workouttracker/style.css' %}">
+<a href="{% url 'workouthome' %}" class="wo_button">Go Back</a>
+<div class="signup-form">
+<h2>Sign Up</h2>
+	<form class="signup" method="POST">
+			<div>
+				{% csrf_token %}
+				{{ form.as_p }}
+				<input class="wo_button" type="submit" value="Signup"/>
+			</div>
+	</form>
+</div>
+{% endblock %}

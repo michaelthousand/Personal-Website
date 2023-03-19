@@ -1,0 +1,23 @@
+{% extends 'workouttracker/base.html' %} 
+
+{% load static %} 
+
+{% block head %}
+<title>1000 Workouts - New Workout</title>
+<link rel="stylesheet" href="{% static 'workouttracker/style.css' %}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+{% endblock %}
+
+{% block content %}
+<a href="{% url 'workoutlist' %}" class="wo_button">View Workouts</a>
+<h2>Add a New Workout</h2>
+<p><em>Note</em>: the calories burned and current weight fields are optional if you forget to track them (or simply don't want to!)</p>
+<br>
+<br>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button class="wo_button" type="submit">Save</button>
+</form>
+{% endblock %}

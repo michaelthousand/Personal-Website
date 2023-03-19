@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!--This page is for the base template the other pages will use-->
+
+
+<head>
+    <!--Tells the program to expect header information (e.g., a stylesheet)-->
+    {% block head %}
+    
+    {% endblock %}
+
+
+</head>
+<body>
+    <div id="banner">
+        <h1>1000 Workouts Tracker App</h1>
+        <a class="wo_button gray" href="{% url 'projects' %}">Return to Michael Thousand.com</a>
+    </div>
+    
+    
+
+    <!--Below is where any specifics for the page will be found-->
+    {% block content %}
+    {% endblock %}
+</body>

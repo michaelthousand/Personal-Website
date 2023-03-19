@@ -1,0 +1,79 @@
+{% extends 'workouttracker/base.html' %}
+
+{% load static %}
+
+<!--Below is for the header information that will be pushed into the base template-->
+{% block head %}
+<title>1000 Workouts - Workout List</title>
+<link rel="stylesheet" href="{% static 'workouttracker/style.css' %}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+{% endblock %}
+
+
+
+{% block content %}
+<nav>
+    <a href="{% url 'profile' %}" class="wo_button">Profile</a>
+    <a href="{% url 'addworkout' %}" class="wo_button">New Workout</a>
+    <a href="{% url 'logout' %}" class="wo_button">Log Out</a>
+</nav>
+<h2>View all Workouts:</h2>
+{% if workouts %}
+    <table id="wo_list">
+        <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Exercises</th>
+            <th>Duration</th>
+            <th>Calories Burned</th>
+            <th>Current Weight</th>
+            <th>Notes</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        {% for workout in workouts %}
+            <tr>
+                <td>{{ workout.date }}</td>
+                <td>{{ workout.get_timeday_display }}</td>
+                <td>{{ workout.exercises }}</td>
+                <td>{{ workout.duration }}</td>
+                <td>{{ workout.cals_burned }}</td>
+                <td>{{ workout.current_weight }}</td>
+                <td>{{ workout.notes }}</td>
+                <td><a href="{% url 'updateworkout' workout.id %}" style="text-decoration: none; color: inherit;"><span class="material-symbols-outlined">
+                    edit
+                    </span></a></td>
+                <td><a href="{% url 'deleteworkout' workout.id %}" style="text-decoration: none; color: red;"><span class="material-symbols-outlined delete">
+                    delete
+                    </span></a></td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% if is_paginated %}
+        <nav class="pagination">
+            <ul>
+                {% if page_obj.has_previous %}
+                    <li><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+                {% else %}
+                    <li class="disabled"><span>&laquo;</span></li>
+                {% endif %}
+                {% for i in paginator.page_range %}
+                    {% if page_obj.number == i %}
+                        <li class="active"><span>{{ i }} <span class="sr-only"></span></span></li>
+                    {% else %}
+                        <li><a href="?page={{ i }}">{{ i }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                {% if page_obj.has_next %}
+                    <li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+                {% else %}
+                    <li class="disabled"><span>&raquo;</span></li>
+                {% endif %}
+            </ul>
+        </nav>
+    {% endif %}
+{% else %}
+    <p>{{ empty_message }}</p>
+{% endif %}
+{% endblock %}

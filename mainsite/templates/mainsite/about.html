@@ -1,0 +1,129 @@
+{% extends 'mainsite/base.html' %}
+
+{%  load static %}
+
+
+{% block head %}
+<title>Michael Thousand - About</title>
+<link rel="stylesheet" href="{% static 'mainsite/style.css' %}">
+{% endblock %}
+
+
+
+{% block content %}
+<div id="topSection">
+    <img id="aboutImage" src="{% static 'images/wedding_solo.jpg' %}" alt="Michael">
+    <p id="aboutTopText">I am currently a healthcare supervisor working on a transition to tech. I am studying software development and programming at the University of California-Berkeley.
+    <br>
+    <br>
+    In addition, I have a master's degree in philosophy and formerly taught full-time at the university level.
+    </p>
+</div>
+
+
+<div class="aboutContainer">
+    <h1>Technical Skills</h1>
+    <div class="skills-table">
+        <div class="skill">
+            <p class="skillname">Python</p>
+            <p>Proficient</p>
+        </div>
+        <div class="skill">
+            <p class="skillname">Django</p>
+            <p>Proficient</p>
+        </div>
+        <div class="skill">
+            <p class="skillname">Java</p>
+            <p>Proficient</p>
+        </div>
+        <div class="skill">
+            <p class="skillname">JavaScript</p>
+            <p>Intermediate</p>
+        </div>
+        <div class="skill">
+            <p class="skillname">SQL</p>
+            <p>Intermediate</p>
+        </div>
+        <div class="skill">
+            <p class="skillname">HTML/CSS</p>
+            <p>Proficient</p>
+        </div>
+        <div class="skill">
+            <p class="skillname">UI/UX</p>
+            <p>Intermediate</p>
+        </div>
+        <div class="skill">
+            <p class="skillname">Unity/Unreal Engine</p>
+            <p>Beginner</p>
+        </div>
+        <div class="skill">
+            <p class="skillname">Adobe Creative</p>
+            <p>Intermediate</p>
+        </div>
+        <div class="skill">
+            <p class="skillname">Microsoft Office</p>
+            <p>Advanced</p>
+        </div>
+    </div>
+</div>
+
+<div class="aboutContainer">
+    <h1>Work History</h1>
+    <a class="aboutresumebutton" style="color: #AD9600;" href="../content/Michael_Thousand_Resume.pdf" role="button" target="_blank">
+        <span>DOWNLOAD RESUME</span>
+        <div class="icon">
+          <i class="fa fa-arrow-down"></i>
+        </div>
+    </a>
+    <div class="resume-table">
+        <div class="job">
+            <h3>Advocate Aurora Health</h3>
+            <p class="role"><strong>Supervisor, Pre-Service</strong></p>
+            <p class="date"><strong>10/2021-Present</strong></p>
+            <br>
+            <p class="role">Workforce Scheduling Coordinator</p>
+            <p class="date">Mar. 2020 - Oct. 2021</p>
+            <br>
+            <p class="role">Pre-Service Specialist</p>
+            <p class="date">Feb. 2019 - Mar. 2020</p>
+        </div>
+        <div class="job">
+            <h3>Carroll University</h3>
+            <p class="role">Visiting Lecturer in Philosophy</p>
+            <p class="date">Jan. 2021 - July 2021</p>
+            <br>
+            <p class="role">Adjunct Professor</p>
+            <p class="date">Sep. 2019 - Jan. 2021</p>
+        </div>
+        <div class="job">
+            <h3>University of Wisconsin-Milwaukee</h3>
+            <p class="role">Associate Lecturer</p>
+            <p class="date">Jan. 2021 - July 2021</p>
+            <br>
+            <p class="role">Professor of Record</p>
+            <p class="date">Sep. 2017 - May 2018</p>
+        </div>
+    </div>
+</div>
+<div class="aboutContainer">
+    <h1>Education</h1>
+    <div class="edu-table">
+        <div class="school">
+            <h3>University of California-Berkeley</h3>
+            <p class="role">Certificate - Software Development & Programming</p>
+            <p class="date">08/2022-Present</p>
+        </div>
+        <div class="school">
+            <h3>University of Wisconsin-Milwaukee</h3>
+            <p class="role">Master of the Arts - Philosophy</p>
+            <p class="date">Graduated: 2018</p>
+        </div>
+        <div class="school">
+            <h3>Northern Michigan University</h3>
+            <p class="role">Bachelor of Science - Philosophy</p>
+            <p class="date">Graduated: 2016</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

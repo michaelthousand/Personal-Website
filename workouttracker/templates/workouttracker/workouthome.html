@@ -1,0 +1,26 @@
+<!--Below is needed to extend the base layout-->
+{% extends 'workouttracker/base.html' %}
+
+{%  load static %}
+
+<!--Below is for the header information that will be pushed into the base template-->
+{% block head %}
+<title>1000 Workouts - Home</title>
+<link rel="stylesheet" href="{% static 'workouttracker/style.css' %}">
+{% endblock %}
+
+
+
+{% block content %}
+<nav>
+    <a href="{% url 'signup' %}" class="wo_button">Sign Up</a>
+    <a href="{% url 'login' %}" class="wo_button">Log In</a>
+</nav>
+
+<p>Welcome to the 1000 Workout Tracker App! Please email me better name ideas.</p>
+<p>Currently, you are able to upload workout results and view some statistics. Workout planning and more advanced statistics will be coming soon!</p>
+
+
+
+
+{% endblock %}

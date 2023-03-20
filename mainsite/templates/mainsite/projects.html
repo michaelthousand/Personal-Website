@@ -11,13 +11,36 @@
 
 
 {% block content %}
-<br>
-<br>
-<br>
-<br>
-<div id="templink">
-    <h2>I'll be adding more to this page soon, but here is a link to a built-in workout tracker app: <a href="{% url 'workouthome' %}">Click Here</a></h2>
+<div class="projects-container" id="projects-top">
+    <h1>Projects Home</h1>
+    <p>On this page, you will find information on my current projects and some that I've completed recently. If you have any feedback or thoughts about any of the projects, please feel free to use the Contact form to get in touch!</p>
 </div>
+
+<div class="projects-container" id="workouttrackerinfo">
+    <h2>1000 Workouts (better name pending)</h2>
+    <p><em>3/19/23:</em> version 1.0 is now live. Click <a href="{% url 'workouthome' %}">here</a> to be redirected to the app.</p>
+    <p>This is a web application for tracking user's workouts to help them keep up with their fitness goals. User inputs are stored in a binary database that is linked to their username. This allows them to view their wworkout 
+    history and track some basic statistics. More functionality will be added in the future.</p>
+    <img src="{% static 'images/wo_1.jpg' %}" alt="1000 Workouts Image 1">
+    <p>Version 1.0 includes individual profiles that allow users to see some basic statistics.</p>
+    <img src="{% static 'images/wo_2.jpg' %}" alt="1000 Workouts Image 2">
+    <p>It also allows users to view their individual workouts, and edit or delete incorrect entries.</p>
+    <p><strong>Upcoming Updates:</strong></p>
+    <ul>
+        <li>More statistics</li>
+        <li>Workout planning</li>
+        <li>Customizable user profiles</li>
+        <li>Mobile optimization</li>
+    </ul>
+
+</div>
+
+
+<footer>
+    <div>
+        <p>Created and designed by Michael Thousand - &copy; 2023.</p>
+    </div> 
+</footer>
 
 
 {% endblock %}

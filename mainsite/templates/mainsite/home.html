@@ -28,12 +28,11 @@
 <div class="jumbotron">
     <div class="container" id="title">
         <h1>Michael Thousand</h1>
-        <h2 id="role">Computer Programmer</h2>
-        <!--
+        
         <h2 id="role"><span
             class="txt-rotate"
             data-period="2000"
-            data-rotate='[ "Python Programmer", "Game Developer", "Java Programmer", "Front-End Web Developer" ]'></span></h2> -->
+            data-rotate='[ "Python Programmer", "App Developer", "Java Programmer", "Front-End Web Developer" ]'></span></h2>
     </div>
 
     <a class="resumebutton" id="resumebutton" style="color: #AD9600;" href="{% static 'files/Michael Thousand Resume.pdf'%}" role="button" target="_blank">
@@ -44,6 +43,12 @@
     </a>
 </div> 
 
-<script src="/mainsite/static/mainsite/index.js"></script>
+<footer>
+    <div id="homefooter">
+        <p>Created and designed by Michael Thousand - &copy; 2023. Photo by Manor Studios 1848.</p>
+    </div> 
+</footer>
+
+<script src="{% static 'mainsite/index.js' %}"></script>
 
 {% endblock %}

@@ -57,8 +57,13 @@ class AddWorkout(LoginRequiredMixin, CreateView):
             form.add_error('date', 'Workout date cannot be in the future')
 
         # Sanitize user input data to prevent XSS attacks
-        form.instance.workout_name = escape(strip_tags(form.instance.workout_name))
-        form.instance.description = escape(strip_tags(form.instance.description))
+        form.instance.date = escape(strip_tags(form.instance.date))
+        form.instance.duration = escape(strip_tags(form.instance.duration))
+        if form.instance.cals_burned != None:
+            form.instance.cals_burned = escape(strip_tags(form.instance.cals_burned))
+        if form.instance.current_weight != None:
+            form.instance.current_weight = escape(strip_tags(form.instance.current_weight))
+        form.instance.notes = escape(strip_tags(form.instance.notes))
 
         # Check if there are any other validation errors on the form
         if form.errors:
@@ -85,8 +90,13 @@ class UpdateWorkout(LoginRequiredMixin, UpdateView):
             form.add_error('date', 'Workout date cannot be in the future')
         
         # Sanitize user input data to prevent XSS attacks
-        form.instance.workout_name = escape(strip_tags(form.instance.workout_name))
-        form.instance.description = escape(strip_tags(form.instance.description))
+        form.instance.date = escape(strip_tags(form.instance.date))
+        form.instance.duration = escape(strip_tags(form.instance.duration))
+        if form.instance.cals_burned != None:
+            form.instance.cals_burned = escape(strip_tags(form.instance.cals_burned))
+        if form.instance.current_weight != None:
+            form.instance.current_weight = escape(strip_tags(form.instance.current_weight))
+        form.instance.notes = escape(strip_tags(form.instance.notes))
 
         # Check if there are any other validation errors on the form
         if form.errors:

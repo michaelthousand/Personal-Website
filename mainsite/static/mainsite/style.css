@@ -26,19 +26,17 @@ body{
 }
 
 footer{
-    text-align: center;
-    background-color: #0000009f;
-    line-height: 4rem;
-    margin-bottom: 0px;
-    margin-top: 750px;
-    color: #fff;
-    font-family: montserrat, sans-serif;
-    font-size: 1.5rem;
-    /*
-    opacity: 0;
-    animation: fadeIn 2s ease-in 400ms forwards;
-    */
+  text-align: center;
+  background-color: #0000009f;
+  line-height: 4rem;
+  margin-bottom: 0px;
+  margin-top: 80px;
+  color: #fff;
+  font-family: montserrat, sans-serif;
+  font-size: 1.5rem;
 }
+
+
 
 /* Home Page */
 #title{
@@ -140,6 +138,41 @@ footer{
   
   .resumebutton:hover .icon .fa {
     font-size: 45px;
+  }
+
+  #homefooter{
+    text-align: center;
+    background-color: #0000009f;
+    line-height: 4rem;
+    margin-bottom: 0px;
+    margin-top: 800px;
+    color: #fff;
+    font-family: montserrat, sans-serif;
+    font-size: 1.5rem;
+}
+
+  @media only screen and (max-width: 2000px){
+    #title{
+      margin-top: 900px;
+      margin-right: auto;
+    }
+
+    #title h1{
+      font-size: 4.5rem;
+    }
+
+    #title h2{
+      font-size: 2.5rem;
+    }
+
+    #resumebutton{
+      margin-top: 40px;
+      margin-right: auto;
+    }
+
+    #homefooter{
+      margin-top: 95px;
+    }
   }
 
 
@@ -365,18 +398,76 @@ footer{
   font-size: 45px;
 }
 
+@media only screen and (max-width: 1550px){
+  #topSection{
+    display: block;
+    text-align: center;
+  }
+
+  .skills-table{
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  }
+  
+  .resume-table{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  .edu-table{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+
 
 
 /* Projects Page*/
-#templink h2{
-  color:#fff;
+
+.projects-container{
+  padding: 20px;
+  margin: 50px;
+  background-color: #c9c9c9;
+  outline: 5px solid #fff;
+  outline-offset: -10px;
 }
 
-#templink a{
-  color: #E0C100;
+.projects-container h1{
+  color: #000;
+  font-size: 4rem;
 }
 
+.projects-container h2{
+  color: #000;
+  font-size: 2rem;
+}
 
+.projects-container p, li{
+  color: #000;
+  font-size: 1.5rem;
+}
+
+.projects-container img{
+  max-height: 1014px;
+  max-width: 1014px;
+  height: auto;
+  width: auto;
+}
+
+@media only screen and (max-width: 1200px){
+  .projects-container{
+    text-align: center;
+  }
+
+  .projects-container img{
+    max-height: 700px;
+    max-width: 700px;
+  }
+
+  .projects-container ul{
+    list-style-type: none;
+  }
+}
 
 
 /* Contact Page */
@@ -425,4 +516,43 @@ footer{
   padding: 20px 50px 50px 50px;
   border: 5px solid rgba(255, 255, 255, 0.521);
   border-radius: 10px;
+}
+
+
+.button-52 {
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-52:after {
+  content: "";
+  background-color: #E0C100;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.button-52:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+@media (min-width: 768px) {
+  .button-52 {
+    padding: 13px 50px 13px;
+  }
 }

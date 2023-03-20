@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import json
+from django.core.exceptions import ImproperlyConfigured
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -18,13 +20,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
+KEYSDIR = str(BASE_DIR)+"/keys.json"
 
-import os
-from dotenv import load_dotenv
-load_dotenv()
+with open(KEYSDIR) as k:
+    project_keys = json.loads(k.read())
+
+def getKey(setting,project_keys=project_keys):
+    try:
+        return project_keys[setting]
+    except KeyError:
+        errorMessage = "Set the {} env var".format(setting)
+        raise ImproperlyConfigured(errorMessage)
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = str(os.getenv('SECRET_KEY'))
+SECRET_KEY = getKey("SECRETKEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -122,9 +131,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = '/static/'
+import os
 
-STATICFILES_DIRS = [    BASE_DIR / 'workouttracker/static']
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'workouttracker', 'static', 'workouttracker'),
+    os.path.join(BASE_DIR, 'mainsite', 'static', 'mainsite'),
+]
+
+
+STATIC_ROOT = '/home/mthousand/Personal-Website/staticfiles/'
 
 LOGIN_REDIRECT_URL = 'profile'
 
@@ -134,4 +150,14 @@ LOGIN_REDIRECT_URL = 'profile'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+from dotenv import load_dotenv
+
+path_to_env_file = './Personal-Website/.env'
+load_dotenv(path_to_env_file) 
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST_USER = os.getenv("my_email")
+EMAIL_HOST_PASSWORD = os.getenv('my_password')
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
